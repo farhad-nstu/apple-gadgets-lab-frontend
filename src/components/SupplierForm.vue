@@ -3,7 +3,8 @@
       <h2>Add or Edit Supplier</h2>
       <form @submit.prevent="submitForm">
         <input v-model="supplier.name" placeholder="Supplier Name" />
-        <input v-model="supplier.contact" placeholder="Supplier Contact" />
+        <input v-model="supplier.contact_info" placeholder="Supplier Contact" />
+        <input v-model="supplier.address" placeholder="Supplier Address" />
         <button type="submit">Save</button>
       </form>
     </div>
@@ -17,7 +18,8 @@
       return {
         supplier: {
           name: '',
-          contact: ''
+          contact_info: '',
+          address: ''
         }
       };
     },

@@ -3,7 +3,7 @@
       <h2>Supplier List</h2>
       <ul>
         <li v-for="supplier in suppliers" :key="supplier.id">
-          {{ supplier.name }} - {{ supplier.contact }}
+          {{ supplier.name }} - {{ supplier.contact_info }} - {{ supplier.address }}
           <button @click="deleteSupplier(supplier.id)">Delete</button>
         </li>
       </ul>
@@ -23,7 +23,7 @@
     methods: {
       fetchSuppliers() {
         SupplierService.getAll().then(response => {
-          this.suppliers = response.data;
+          this.suppliers = response.data.data.data;
         });
       },
       deleteSupplier(id) {

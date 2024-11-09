@@ -12,7 +12,7 @@ export default {
     return apiClient.get('/list');
   },
   get(id) {
-    return apiClient.get(`/${id}`);
+    return apiClient.get(`/details/${id}`);
   },
   create(data) {
     return apiClient.post('/store', data);
